@@ -20,7 +20,6 @@ int main(int argc, char **argv) {
     {63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
     { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23}
   };
-  //std::reverse(numbers.begin(), numbers.end());
   for (int i = numbers.size() - 2; i >= 0; --i)
     for (int j = 0; j < numbers[i].size(); ++j)
       numbers[i][j] += std::max(numbers[i + 1][j], numbers[i + 1][j + 1]);
