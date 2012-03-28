@@ -2,9 +2,10 @@
 #include <vector>
 #include <cstdint>
 
+inline
 bool is_leap(const std::uint16_t &year);
 std::uint16_t next_cal_id(const std::uint16_t &cal_id, const bool &next_leap);
-std::vector<std::uint16_t> &&lookup();
+std::vector<std::uint16_t> lookup();
 
 int main(int argc, char **argv) {
   std::vector<std::uint16_t> year_count = lookup();
@@ -24,10 +25,9 @@ int main(int argc, char **argv) {
  * @param year The year for which one wants to know if it is a leap year.
  * @return true if the given year is a leap year
  */
+inline
 bool is_leap(const std::uint16_t &year) {
-  if (!(year % 100) && (year % 400))
-    return false;
-  return !(year % 4);
+  return ((year % 100) || !(year % 400)) && !(year % 4);
 }
 
 /**
@@ -71,7 +71,7 @@ std::uint16_t count_sundays_begin_month(std::uint16_t cal_id) {
   return res;
 }
 
-std::vector<std::uint16_t> &&lookup() {
+std::vector<std::uint16_t> lookup() {
   std::vector<std::uint16_t> res;
   for (int i = 0; i < 14; ++i)
     res.push_back(count_sundays_begin_month(i));
