@@ -38,9 +38,9 @@ int main(int argc, char **argv) {
 
   unsigned count = 0;
   std::uint64_t addition = 0;
-  for (auto s = names.begin(); s != names.end(); ++s) {
-    addition += (++count) * get_worth(*s);
-  }
+  for (std::string s : names)
+    addition += (++count) * get_worth(s);
+
   std::cout << addition << '\n';
 
   return 0;
