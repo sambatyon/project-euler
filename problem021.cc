@@ -22,10 +22,10 @@ int divisors(const int &n) {
   const double root = std::sqrt(n);
   const int nroot = static_cast<int>(std::floor(root));
   int res = 0;
-  for (int i = 1; i < nroot; ++i)
+  for (int i = 1; i <= nroot; ++i)
     if (n % i == 0)
       res += i + n / i;
-  if (n % nroot == 0)
-    res += nroot;
+  if (nroot * nroot == n)
+    res -= nroot;
   return res - n;
 }
