@@ -8,12 +8,12 @@ int main(int argc, char **argv) {
   std::vector<std::uint64_t> primes;
   primes.push_back(2);
   primes.push_back(n);
-  while (2000000 > *primes.rbegin()) {
+  while (2000000 > primes.back()) {
     n += 2;
-    for (unsigned k = 1; k < primes.size(); ++k) {
-      if (n % primes[k] == 0)
+    for (auto p : primes) {
+      if (n % p == 0)
         break;
-      if (n / primes[k] <= primes[k]) {
+      if (n / p <= p) {
         primes.push_back(n);
         acc += n;
         break;
