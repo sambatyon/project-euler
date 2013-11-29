@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
       }
     }
   }
-  acc -= *primes.rbegin();
+  acc -= primes.back();
   std::cout << acc << '\n';
 
   return 0;
