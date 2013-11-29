@@ -2,8 +2,6 @@
 #include <cstdint>
 #include <cmath>
 
-// TODO: Redo 035 using 010 to generate primes. Dont use strings
-
 int FindFirstOne(std::uint32_t number);
 int GetBit(std::uint32_t number, std::uint16_t index);
 bool IsBinaryPalindrome(std::uint32_t number);
